@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mandas Hotel | Home</title>
+  <link rel="icon" href="assets/img/mandaslogo.png" type="image/png">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="assets/img/mandaslogo.png" alt="Mandas Logo" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-slide" id="hero-slide">
+      <img src="assets/img/bg1.jpg" class="active" alt="Background 1">
+      <img src="assets/img/bg2.jpg" alt="Background 2">
+    </div>
+    <div class="hero-content">
+      <h1>Mandas Hotel Enugu</h1>
+      <p>Your Comfort Zone Away From Home</p>
+      <a href="#booking" class="btn btn-gold">Book Now</a>
+    </div>
+  </header>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <form action="php/mailer.php" method="POST" class="booking-form">
+        <div class="row">
+          <div class="col-md-3">
+            <label>Check-In</label>
+            <input type="date" name="checkin" class="form-control" required>
+          </div>
+          <div class="col-md-3">
+            <label>Check-Out</label>
+            <input type="date" name="checkout" class="form-control" required>
+          </div>
+          <div class="col-md-3">
+            <label>Guests</label>
+            <input type="number" name="guests" class="form-control" min="1" required>
+          </div>
+          <div class="col-md-3 align-self-end">
+            <button type="submit" class="btn btn-gold w-100">Book Now</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p><strong>Mandas Hotel</strong></p>
+      <p>Adjacent Romchi Fuel Station, Off Ugwuaji Monac Road, Enugu</p>
+      <p><a href="mailto:reservations@mandashotel.com">reservations@mandashotel.com</a> | +234 706 294 3507</p>
+      <iframe src="https://www.google.com/maps?q=Mandas+Hotel,+Enugu&output=embed" width="100%" height="200" style="border:0;" allowfullscreen></iframe>
+      <p class="mt-3">&copy; 2025 Mandas Hotel. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Icons -->
+  <div class="floating-icons">
+    <a href="https://wa.me/2347062943507" target="_blank"><img src="assets/img/whatsapp.png" alt="WhatsApp"></a>
+    <a href="tel:+2347062943507"><img src="assets/img/phone.png" alt="Call"></a>
+    <a href="mailto:reservations@mandashotel.com"><img src="assets/img/email.png" alt="Email"></a>
+    <a href="https://instagram.com/mandashotel" target="_blank"><img src="assets/img/instagram.png" alt="Instagram"></a>
+    <a href="https://facebook.com/mandashotel" target="_blank"><img src="assets/img/facebook.png" alt="Facebook"></a>
+  </div>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
