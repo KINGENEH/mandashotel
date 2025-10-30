@@ -148,3 +148,37 @@ body {
   .hero-content p { font-size: 1rem; }
   .navbar-brand img.logo { height: 50px; }
 }
+
+/* Transparent-to-white Navbar Transition */
+#mainNav {
+  transition: all 0.4s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+#mainNav.scrolled {
+  background-color: #fff !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #d4af37;
+}
+
+/* Fix mobile dropdown look */
+.navbar-collapse {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+}
+
