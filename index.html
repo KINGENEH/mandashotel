@@ -18,23 +18,21 @@
 
 <body>
   <!-- Navbar -->
-  <!-- Navbar -->
-<nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top py-2">
   <div class="container">
     <!-- Logo -->
     <a class="navbar-brand" href="#">
-      <img src="assets/img/mandaslogo.png" alt="Mandas Hotel" height="45" class="d-inline-block align-top">
+      <img src="assets/img/mandaslogo.png" alt="Mandas Hotel" height="48" class="d-inline-block align-top">
     </a>
 
-    <!-- Hamburger Menu (Mobile) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Hamburger Menu -->
+    <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu Links -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
-      <ul class="navbar-nav">
+    <!-- Menu (Slides from Right) -->
+    <div id="sideMenu" class="side-menu">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
@@ -45,20 +43,55 @@
   </div>
 </nav>
 
+<!-- Hero Section -->
+<header class="hero">
+  <div class="hero-slide" id="hero-slide">
+    <img src="assets/img/bg1.jpg" class="active" alt="Background 1">
+    <img src="assets/img/bg2.jpg" alt="Background 2">
+  </div>
+  <div class="hero-content text-center">
+    <h1>Mandas Hotel Enugu</h1>
+    <p>A Residence of Luxury and Comfort</p>
+    <a href="#booking" class="btn btn-gold mt-4">Book Now</a>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-slide" id="hero-slide">
-      <img src="assets/img/bg1.jpg" class="active" alt="Background 1">
-      <img src="assets/img/bg2.jpg" alt="Background 2">
-    </div>
-    <div class="hero-content">
-      <h1>Mandas Hotel Enugu</h1>
-      <p>Your Comfort Zone Away From Home</p>
-      <a href="#booking" class="btn btn-gold">Book Now</a>
-    </div>
-  </header>
+<!-- Mini Booking Section -->
+<section id="quick-book" class="quick-book py-3">
+  <div class="container">
+    <form id="miniBookingForm" class="row align-items-center justify-content-center">
+      <div class="col-md-3 col-6 mb-2">
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+          <input type="date" id="miniCheckin" class="form-control" placeholder="Check-In">
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-2">
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-calendar-check"></i></span>
+          <input type="date" id="miniCheckout" class="form-control" placeholder="Check-Out">
+        </div>
+      </div>
+      <div class="col-md-2 col-6 mb-2">
+        <button type="submit" class="btn btn-gold w-100">Book Now</button>
+      </div>
+    </form>
+  </div>
+</section>
 
+<!-- Introduction Section -->
+<section class="intro text-center py-5">
+  <div class="container">
+    <h2>Welcome to Mandas Hotel</h2>
+    <p class="mt-3 lead">
+      Experience top-tier hospitality in the heart of Enugu. 
+      Mandas Hotel is where elegance meets comfort — 
+      your serene retreat for luxury living, business, and relaxation.
+    </p>
+  </div>
+</section>
+
+  
   <!-- Booking Section -->
   <section id="booking" class="booking-section">
     <div class="container">
@@ -108,6 +141,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
