@@ -386,4 +386,14 @@ h1, h2, h3, h4, h5 {
   color: #c6a15b; /* gold accent hover */
 }
 
+#mainNav .nav-link {
+  color: #fff; /* white before scroll */
+  transition: color 0.3s ease;
+}
+
+#mainNav.scrolled .nav-link {
+  color: #000; /* black after scroll */
+}
+
+
 
