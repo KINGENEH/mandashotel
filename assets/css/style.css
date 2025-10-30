@@ -1,11 +1,17 @@
 /* ============ General ============ */
+/* ===== Global Fonts ===== */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #333;
+  background-color: #fff;
   margin: 0;
   padding: 0;
-  background-color: #fff;
 }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
 
 /* ============ Navbar ============ */
 .navbar {
@@ -333,3 +339,4 @@ body {
   background: #d4af37;
   transform: scale(1.1);
 }
+
