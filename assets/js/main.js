@@ -95,8 +95,8 @@ miniForm.addEventListener("submit", function (e) {
   document.querySelector("#booking").scrollIntoView({ behavior: "smooth" });
 });
 
-// Change navbar background and link colors on scroll
-window.addEventListener("scroll", function() {
+// === Change navbar background and link colors on scroll ===
+window.addEventListener("scroll", function () {
   const navbar = document.getElementById("mainNav");
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
@@ -106,13 +106,6 @@ window.addEventListener("scroll", function() {
 });
 
 // === Right-slide mobile menu toggle ===
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
-
-menuToggle.addEventListener("click", () => {
-  sideMenu.classList.toggle("active");
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menuToggle");
   const sideMenu = document.getElementById("sideMenu");
@@ -121,5 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
       sideMenu.classList.toggle("active");
     });
+
+    // Optional: Close menu when a link is clicked
+    document.querySelectorAll(".side-menu .nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        sideMenu.classList.remove("active");
+      });
+    });
   }
 });
+
