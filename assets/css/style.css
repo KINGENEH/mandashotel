@@ -373,4 +373,17 @@ h1, h2, h3, h4, h5 {
 }
 
 
+/* ===============================
+   NAVBAR LINK COLORS & HOVER
+================================ */
+#mainNav .nav-link {
+  color: #000; /* black text so it’s visible */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#mainNav .nav-link:hover {
+  color: #c6a15b; /* gold accent hover */
+}
+
 
