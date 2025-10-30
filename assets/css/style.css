@@ -340,3 +340,10 @@ h1, h2, h3, h4, h5 {
   transform: scale(1.1);
 }
 
+.navbar-nav .nav-link {
+  color: #fff; /* white text for transparent navbar */
+}
+#mainNav.scrolled .nav-link {
+  color: #000; /* black text after scroll */
+}
+
