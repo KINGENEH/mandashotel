@@ -45,3 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Navbar transparent to white on scroll
+window.addEventListener("scroll", function () {
+  const nav = document.getElementById("mainNav");
+  if (window.scrollY > 80) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
