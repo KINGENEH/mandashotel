@@ -94,3 +94,13 @@ miniForm.addEventListener("submit", function (e) {
   document.querySelector('input[name="checkout"]').value = checkout;
   document.querySelector("#booking").scrollIntoView({ behavior: "smooth" });
 });
+
+// Change navbar background and link colors on scroll
+window.addEventListener("scroll", function() {
+  const navbar = document.getElementById("mainNav");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
