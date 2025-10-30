@@ -349,4 +349,22 @@ h1, h2, h3, h4, h5 {
   color: #000; /* black text after scroll */
 }
 
+/* === Navbar Link Colors === */
+#mainNav .nav-link {
+  color: #fff;                /* White links before scroll (over hero image) */
+  transition: color 0.3s ease;
+}
+
+#mainNav .nav-link:hover {
+  color: #c6a15b;             /* Gold accent on hover (like Omedel) */
+}
+
+#mainNav.scrolled .nav-link {
+  color: #000;                /* Black links after scroll (on white navbar) */
+}
+
+#mainNav.scrolled .nav-link:hover {
+  color: #c6a15b;             /* Keep gold hover after scroll */
+}
+
 
