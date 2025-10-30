@@ -53,5 +53,44 @@ window.addEventListener("scroll", function () {
     nav.classList.add("scrolled");
   } else {
     nav.classList.remove("scrolled");
+    
   }
+});
+
+
+// Navbar opacity scroll effect
+window.addEventListener("scroll", function () {
+  const nav = document.getElementById("mainNav");
+  if (window.scrollY > 80) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
+// Hero slider rotation
+let slides = document.querySelectorAll("#hero-slide img");
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove("active");
+  current = (current + 1) % slides.length;
+  slides[current].classList.add("active");
+}, 5000);
+
+// Mobile menu slide from right
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+menuToggle.addEventListener("click", () => {
+  sideMenu.classList.toggle("active");
+});
+
+// Mini booking section populate main booking
+const miniForm = document.getElementById("miniBookingForm");
+miniForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const checkin = document.getElementById("miniCheckin").value;
+  const checkout = document.getElementById("miniCheckout").value;
+  document.querySelector('input[name="checkin"]').value = checkin;
+  document.querySelector('input[name="checkout"]').value = checkout;
+  document.querySelector("#booking").scrollIntoView({ behavior: "smooth" });
 });
