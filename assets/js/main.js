@@ -1,4 +1,3 @@
-
 (function(){
   // Avoid running twice if main.js is accidentally included more than once
   if (window.__MANDAS_INIT__) return;
