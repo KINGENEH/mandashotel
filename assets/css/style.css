@@ -396,66 +396,98 @@ h1, h2, h3, h4, h5 {
 }
 
 
-/* Overlay background behind side menu */
+/* ===========================================
+   Ritz-Carlton Style Side Menu Animation
+=========================================== */
+
+/* Background overlay */
 #overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
   z-index: 998;
 }
-
 #overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* Side Menu Styling */
+/* Side Menu Base */
 .side-menu {
   position: fixed;
   top: 0;
-  right: -280px; /* start off-screen */
-  width: 280px;
+  right: -320px;
+  width: 300px;
   height: 100%;
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px); /* smooth frosted-glass effect */
-  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
-  transition: right 0.5s ease, opacity 0.5s ease;
+  backdrop-filter: blur(14px);
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.25);
   opacity: 0;
+  transition: right 0.6s cubic-bezier(0.55, 0, 0.1, 1), opacity 0.5s ease;
   z-index: 999;
-  padding-top: 90px;
+  padding: 100px 30px 40px;
 }
 
-/* Active state (slide-in + fade) */
+/* When active (visible) */
 .side-menu.active {
   right: 0;
   opacity: 1;
 }
 
-/* Inside menu links */
+/* List + Links */
 .side-menu ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+.side-menu .nav-item {
+  margin: 15px 0;
 }
 
 .side-menu .nav-link {
   display: block;
+  font-size: 1.15rem;
   color: #000;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 12px 24px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+/* Active animation sequence */
+.side-menu.active .nav-item:nth-child(1) .nav-link {
+  transition-delay: 0.2s;
+}
+.side-menu.active .nav-item:nth-child(2) .nav-link {
+  transition-delay: 0.35s;
+}
+.side-menu.active .nav-item:nth-child(3) .nav-link {
+  transition-delay: 0.5s;
+}
+.side-menu.active .nav-item:nth-child(4) .nav-link {
+  transition-delay: 0.65s;
+}
+.side-menu.active .nav-item:nth-child(5) .nav-link {
+  transition-delay: 0.8s;
+}
+
+/* When menu opens, fade each in sequentially */
+.side-menu.active .nav-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hover color */
 .side-menu .nav-link:hover {
-  color: #c6a15b; /* gold accent */
+  color: #c6a15b;
 }
 
 /* ======================
@@ -491,6 +523,7 @@ h1, h2, h3, h4, h5 {
 .side-menu.active .nav-item:nth-child(5) .nav-link {
   transition-delay: 0.5s;
 }
+
 
 
 
