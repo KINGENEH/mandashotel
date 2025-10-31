@@ -294,3 +294,11 @@ footer a:hover {
   transform: scale(1.1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+body, .hero-section, #mainNav {
+  will-change: transform, opacity;
+}
+
+
