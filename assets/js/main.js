@@ -53,5 +53,6 @@ if (menuToggle && sideMenu && overlay) {
       overlay.classList.remove("active");
     });
   });
-}
+
+
 
