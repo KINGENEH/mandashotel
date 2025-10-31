@@ -1,26 +1,26 @@
 
-// Preloader
-window.addEventListener("load", () => {
-  const pre = document.getElementById("preloader");
-  if (pre) { pre.classList.add("hidden"); setTimeout(()=> pre.style.display = "none", 600); }
+window.addEventListener("scroll", function() {
+  const navbar = document.getElementById("mainNav");
+  const logo = document.getElementById("navLogo");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+    logo.src = "assets/img/logo-dark.png"; // dark logo on scroll
+  } else {
+    navbar.classList.remove("scrolled");
+    logo.src = "assets/img/logo-light.png"; // light logo at top
+  }
 });
-// Navbar scroll state
-window.addEventListener("scroll", () => {
-  const nav = document.getElementById("mainNav");
-  if (!nav) return;
-  if (window.scrollY > 50) nav.classList.add("scrolled"); else nav.classList.remove("scrolled");
-});
-// Right-slide menu + overlay
+
+// Mobile toggle logic
 const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu"); 
-const overlay = document.getElementById("overlay");
-if (menuToggle && sideMenu && overlay) {
- menuToggle.addEventListener("click", () => {
-  const active = sideMenu.classList.toggle("active");
-  overlay.classList.toggle("active", active);
-  menuToggle.classList.toggle("active", active); // toggle X animation
-  menuToggle.setAttribute("aria-expanded", active ? "true" : "false");
-});
+const sideMenu = document.getElementById("sideMenu");
+
+if (menuToggle && sideMenu) {
+  menuToggle.addEventListener("click", () => {
+    sideMenu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+  });
+}
 
   overlay.addEventListener("click", () => {
     sideMenu.classList.remove("active");
