@@ -58,7 +58,7 @@ body{margin:0;font-family:'Poppins',sans-serif;color:#222;overflow-x:hidden}
 }
 
 /* ============================================
-   Hamburger Animation (Open → X Transition)
+   Hamburger Animation (Smooth Bounce)
 ============================================ */
 .navbar-toggler {
   position: relative;
@@ -79,23 +79,39 @@ body{margin:0;font-family:'Poppins',sans-serif;color:#222;overflow-x:hidden}
   height: 2px;
   background: #fff;
   border-radius: 2px;
-  transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+  transform-origin: center;
+  transition:
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.35s ease,
+    background-color 0.5s ease;
 }
 
-/* Gold color when scrolled */
+/* Gold on scroll */
 #mainNav.scrolled .navbar-toggler .bar {
   background: #b9934b;
 }
 
-/* Transform bars into X */
+/* X state */
 .navbar-toggler.active .bar:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
 
 .navbar-toggler.active .bar:nth-child(2) {
   opacity: 0;
+  transform: scale(0.6);
 }
 
 .navbar-toggler.active .bar:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Gentle rebound when closing */
+.navbar-toggler:not(.active) .bar {
+  animation: rebound 0.35s ease;
+}
+
+@keyframes rebound {
+  0%   { transform: scale(0.9); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
