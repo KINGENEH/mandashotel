@@ -1,14 +1,11 @@
-// ============ Hero Slider ============
+// First hero slider
 let slides = document.querySelectorAll("#hero-slide img");
 let currentSlide = 0;
-
 function changeSlide() {
   slides[currentSlide].classList.remove("active");
   currentSlide = (currentSlide + 1) % slides.length;
   slides[currentSlide].classList.add("active");
 }
-
-setInterval(changeSlide, 5000); // every 5 seconds
 
 // ============ Navbar Scroll Effect ============
 window.addEventListener("scroll", function () {
@@ -115,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 
