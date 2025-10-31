@@ -12,6 +12,7 @@
   <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 <body>
+  <!-- Preloader -->
   <div id="preloader" aria-hidden="true">
     <div class="preloader-content">
       <div class="logo-ring">
@@ -22,36 +23,38 @@
     </div>
   </div>
 
+  <!-- Navbar -->
   <nav id="mainNav" class="navbar navbar-expand-lg fixed-top py-2">
-  <div class="container">
-    <!-- Logo -->
-    <a class="navbar-brand" href="#">
-      <img src="assets/img/logo-light.png" alt="Mandas Hotel" id="navLogo" height="60">
-    </a>
+    <div class="container">
+      <a class="navbar-brand" href="#top">
+        <img src="assets/img/logo-light.png" alt="Mandas Hotel" id="navLogo" height="60">
+      </a>
 
-    <!-- Hamburger Menu -->
-    <button class="navbar-toggler" id="menuToggle" type="button" aria-label="Toggle navigation">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+      <button class="navbar-toggler" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
-    <!-- Menu -->
-    <div id="sideMenu" class="side-menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
-      </ul>
+      <!-- Mobile Side Menu -->
+      <div id="sideMenu" class="side-menu" role="dialog" aria-modal="true">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#top">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
+  <!-- Overlay for side menu (must be outside container) -->
+  <div id="overlay"></div>
 
   <div id="top"></div>
 
+  <!-- Hero -->
   <header class="hero-section position-relative">
     <div id="hero-slide" class="hero-slide">
       <img src="assets/img/bg1.jpg" class="hero-img active" alt="Background 1" loading="lazy">
@@ -64,6 +67,7 @@
     </div>
   </header>
 
+  <!-- Mini booking -->
   <section id="booking-mini" class="booking-mini-section section reveal delay-1">
     <div class="container">
       <form class="row g-2 g-md-3 align-items-end justify-content-center">
@@ -174,6 +178,7 @@
     </div>
   </footer>
 
+  <!-- Floating contact buttons -->
   <div class="floating-icons">
     <a class="btn-float whatsapp" href="https://wa.me/2347062943507" target="_blank" aria-label="WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
@@ -186,18 +191,11 @@
     </a>
   </div>
 
+  <!-- Scroll to top -->
   <button id="toTop" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
 
+  <!-- Scripts -->
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script defer src="assets/js/main.js"></script>
-
-  <div id="overlay"></div>
-
-<!-- Bootstrap bundle -->
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script defer src="assets/js/main.js"></script>
-</body>
-</html>
-
 </body>
 </html>
