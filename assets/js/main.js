@@ -55,4 +55,5 @@ if (menuToggle && sideMenu && overlay) {
   });
 
 
+}
 
