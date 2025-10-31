@@ -43,13 +43,19 @@ if (menuToggle && sideMenu && overlay) {
 const slides = document.querySelectorAll(".hero-img");
 let current = 0;
 
-if (slides.length > 0) {
-  setInterval(() => {
+
+  let lastChange = 0;
+function animateSlides(timestamp) {
+  if (timestamp - lastChange > 6000) {
     slides[current].classList.remove("active");
     current = (current + 1) % slides.length;
     slides[current].classList.add("active");
-  }, 6000);
+    lastChange = timestamp;
+  }
+  requestAnimationFrame(animateSlides);
 }
+requestAnimationFrame(animateSlides);
+
 
 // ============ Smooth Scroll for Navbar Links ============
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -67,4 +73,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
 
