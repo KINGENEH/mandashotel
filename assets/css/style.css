@@ -458,6 +458,40 @@ h1, h2, h3, h4, h5 {
   color: #c6a15b; /* gold accent */
 }
 
+/* ======================
+   Animated Menu Items
+====================== */
+
+/* Initially hide each nav link */
+.side-menu .nav-link {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* When the side menu is active, fade in each link one by one */
+.side-menu.active .nav-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered animation timing (each appears slightly later) */
+.side-menu.active .nav-item:nth-child(1) .nav-link {
+  transition-delay: 0.1s;
+}
+.side-menu.active .nav-item:nth-child(2) .nav-link {
+  transition-delay: 0.2s;
+}
+.side-menu.active .nav-item:nth-child(3) .nav-link {
+  transition-delay: 0.3s;
+}
+.side-menu.active .nav-item:nth-child(4) .nav-link {
+  transition-delay: 0.4s;
+}
+.side-menu.active .nav-item:nth-child(5) .nav-link {
+  transition-delay: 0.5s;
+}
+
 
 
 
