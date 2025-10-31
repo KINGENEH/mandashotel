@@ -1,34 +1,18 @@
-// ============ HERO SLIDER ============
-document.addEventListener("DOMContentLoaded", () => {
+// =======================================================
+// MANDAS HOTEL MAIN.JS — Navbar, Hero, Side Menu
+// =======================================================
 
-  // HERO SLIDER
-  const slides = document.querySelectorAll("#hero-slide img");
-  let currentSlide = 0;
-
-  function changeSlide() {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-  }
-
-  if (slides.length > 0) {
-    setInterval(changeSlide, 5000);
-  }
-
-  // ============ NAVBAR SCROLL EFFECT ============
+// ============ Navbar Scroll Effect ============
+window.addEventListener("scroll", function () {
   const navbar = document.getElementById("mainNav");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
 
-  window.addEventListener("scroll", function () {
-    if (navbar) {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    }
-  });
-
- // ============ RIGHT-SLIDE MOBILE MENU + OVERLAY + HAMBURGER ANIMATION ============
+// ============ Right-slide Mobile Menu ============
 const menuToggle = document.getElementById("menuToggle");
 const sideMenu = document.getElementById("sideMenu");
 const overlay = document.getElementById("overlay");
@@ -37,7 +21,7 @@ if (menuToggle && sideMenu && overlay) {
   menuToggle.addEventListener("click", () => {
     sideMenu.classList.toggle("active");
     overlay.classList.toggle("active");
-    menuToggle.classList.toggle("active"); // animate hamburger
+    menuToggle.classList.toggle("active");
   });
 
   overlay.addEventListener("click", () => {
@@ -55,8 +39,32 @@ if (menuToggle && sideMenu && overlay) {
   });
 }
 
-  console.log("main.js loaded successfully ✅");
+// ============ Hero Slider ============
+const slides = document.querySelectorAll(".hero-img");
+let current = 0;
 
-}); // ✅ <-- this was missing previously!
+if (slides.length > 0) {
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 6000);
+}
 
+// ============ Smooth Scroll for Navbar Links ============
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href");
+    if (targetId.length > 1) {
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 60,
+          behavior: "smooth"
+        });
+      }
+    }
+  });
+});
 
