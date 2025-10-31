@@ -68,14 +68,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Second slider (rename the variable)
-let heroSlides = document.querySelectorAll("#hero-slide img");
-let current = 0;
-setInterval(() => {
-  heroSlides[current].classList.remove("active");
-  current = (current + 1) % heroSlides.length;
-  heroSlides[current].classList.add("active");
-}, 5000);
 
 // Mobile menu slide from right
 const menuToggle = document.getElementById("menuToggle");
@@ -123,5 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
