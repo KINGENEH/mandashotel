@@ -14,19 +14,21 @@ window.addEventListener("scroll", function() {
 // Mobile toggle logic
 const menuToggle = document.getElementById("menuToggle");
 const sideMenu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
 
-if (menuToggle && sideMenu) {
+if (menuToggle && sideMenu && overlay) {
   menuToggle.addEventListener("click", () => {
     sideMenu.classList.toggle("active");
+    overlay.classList.toggle("active");
     menuToggle.classList.toggle("active");
   });
-}
 
   overlay.addEventListener("click", () => {
     sideMenu.classList.remove("active");
     overlay.classList.remove("active");
     menuToggle.setAttribute("aria-expanded","false");
   });
+
   document.querySelectorAll(".side-menu .nav-link").forEach(link => {
     link.addEventListener("click", () => {
       sideMenu.classList.remove("active");
@@ -35,6 +37,7 @@ if (menuToggle && sideMenu) {
     });
   });
 }
+
 // Hero slider
 (function(){
   const slides = document.querySelectorAll(".hero-img");
