@@ -1,17 +1,18 @@
 
+// NAVBAR SCROLL + LOGO SWITCH
 window.addEventListener("scroll", function() {
   const navbar = document.getElementById("mainNav");
   const logo = document.getElementById("navLogo");
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
-    logo.src = "assets/img/logo-dark.png"; // dark logo on scroll
+    logo.src = "assets/img/logo-dark.png";
   } else {
     navbar.classList.remove("scrolled");
-    logo.src = "assets/img/logo-light.png"; // light logo at top
+    logo.src = "assets/img/logo-light.png";
   }
 });
 
-// Mobile toggle logic
+// MOBILE MENU TOGGLE + OVERLAY
 const menuToggle = document.getElementById("menuToggle");
 const sideMenu = document.getElementById("sideMenu");
 const overlay = document.getElementById("overlay");
@@ -26,17 +27,18 @@ if (menuToggle && sideMenu && overlay) {
   overlay.addEventListener("click", () => {
     sideMenu.classList.remove("active");
     overlay.classList.remove("active");
-    menuToggle.setAttribute("aria-expanded","false");
+    menuToggle.classList.remove("active");
   });
 
   document.querySelectorAll(".side-menu .nav-link").forEach(link => {
     link.addEventListener("click", () => {
       sideMenu.classList.remove("active");
       overlay.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded","false");
+      menuToggle.classList.remove("active");
     });
   });
 }
+
 
 // Hero slider
 (function(){
