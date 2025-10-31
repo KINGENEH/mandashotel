@@ -1,101 +1,34 @@
-// First hero slider
-let slides = document.querySelectorAll("#hero-slide img");
-let currentSlide = 0;
-function changeSlide() {
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("active");
-}
+// ============ HERO SLIDER ============
+document.addEventListener("DOMContentLoaded", () => {
 
-// ============ Navbar Scroll Effect ============
-window.addEventListener("scroll", function () {
-  let navbar = document.getElementById("navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
+  // HERO SLIDER
+  const slides = document.querySelectorAll("#hero-slide img");
+  let currentSlide = 0;
+
+  function changeSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
   }
-});
 
-// ============ Booking Form (AJAX) ============
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".booking-form");
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+  if (slides.length > 0) {
+    setInterval(changeSlide, 5000);
+  }
 
-    const formData = new FormData(form);
-    try {
-      const response = await fetch("php/mailer.php", {
-        method: "POST",
-        body: formData,
-      });
+  // ============ NAVBAR SCROLL EFFECT ============
+  const navbar = document.getElementById("mainNav");
 
-      if (response.ok) {
-        alert("✅ Your booking request has been sent successfully! We'll get back to you shortly.");
-        form.reset();
+  window.addEventListener("scroll", function () {
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
       } else {
-        alert("❌ Something went wrong. Please try again later.");
+        navbar.classList.remove("scrolled");
       }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("❌ Network error. Please check your connection.");
     }
   });
-});
 
-// Navbar transparent to white on scroll
-window.addEventListener("scroll", function () {
-  const nav = document.getElementById("mainNav");
-  if (window.scrollY > 80) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-    
-  }
-});
-
-
-// Navbar opacity scroll effect
-window.addEventListener("scroll", function () {
-  const nav = document.getElementById("mainNav");
-  if (window.scrollY > 80) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
-
-
-// Mobile menu slide from right
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
-menuToggle.addEventListener("click", () => {
-  sideMenu.classList.toggle("active");
-});
-
-// Mini booking section populate main booking
-const miniForm = document.getElementById("miniBookingForm");
-miniForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const checkin = document.getElementById("miniCheckin").value;
-  const checkout = document.getElementById("miniCheckout").value;
-  document.querySelector('input[name="checkin"]').value = checkin;
-  document.querySelector('input[name="checkout"]').value = checkout;
-  document.querySelector("#booking").scrollIntoView({ behavior: "smooth" });
-});
-
-// === Change navbar background and link colors on scroll ===
-window.addEventListener("scroll", function () {
-  const navbar = document.getElementById("mainNav");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
-
-// === Right-slide mobile menu toggle ===
-document.addEventListener("DOMContentLoaded", () => {
+  // ============ RIGHT-SLIDE MOBILE MENU ============
   const menuToggle = document.getElementById("menuToggle");
   const sideMenu = document.getElementById("sideMenu");
 
@@ -104,15 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
       sideMenu.classList.toggle("active");
     });
 
-    // Optional: Close menu when a link is clicked
+    // Close the side menu when a link is clicked
     document.querySelectorAll(".side-menu .nav-link").forEach(link => {
       link.addEventListener("click", () => {
         sideMenu.classList.remove("active");
       });
     });
   }
+
+  console.log("main.js loaded successfully ✅");
 });
-
-
-
-
