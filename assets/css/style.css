@@ -78,17 +78,12 @@ body{margin:0;font-family:'Poppins',sans-serif;color:#222;overflow-x:hidden}
 /* ============================================
    Staggered Slide-In for Side Menu Links
 ============================================ */
-.side-menu .nav-link {
-  display: block;
-  color: #222;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 15px 0;
-  text-decoration: none;
-  opacity: 0;
-  transform: translateX(20px);
-  transition: color 0.3s ease;
-}
+.side-menu{position:fixed;top:0;right:-320px;width:300px;height:100vh;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);box-shadow:-6px 0 20px rgba(0,0,0,.18);padding:100px 28px 28px;transition:right .45s ease,opacity .35s;opacity:0;z-index:999}
+.side-menu.active{right:0;opacity:1}
+.side-menu .nav-item{margin:12px 0}
+.side-menu .nav-link{color:#000;font-weight:600;opacity:0;transform:translateX(30px);transition:opacity .5s,transform .5s}
+.side-menu.active .nav-link{opacity:1;transform:translateX(0)}
+.side-menu .nav-link:hover{color:var(--gold)}
 
 /* Animate them in sequence when menu opens */
 .side-menu.active .nav-link {
