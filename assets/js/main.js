@@ -48,17 +48,17 @@
     const sideMenu = document.getElementById("sideMenu");
     const overlay = document.getElementById("overlay");
 
-    if (menuToggle && sideMenu && overlay) {
+    if (menuToggle && sideMenu) {
       menuToggle.addEventListener("click", () => {
         const active = sideMenu.classList.toggle("active");
-        overlay.classList.toggle("active", active);
+      
         menuToggle.classList.toggle("active", active);
         menuToggle.setAttribute("aria-expanded", active ? "true" : "false");
       });
 
-      overlay.addEventListener("click", () => {
+       {
         sideMenu.classList.remove("active");
-        overlay.classList.remove("active");
+        
         menuToggle.classList.remove("active");
         menuToggle.setAttribute("aria-expanded", "false");
       });
