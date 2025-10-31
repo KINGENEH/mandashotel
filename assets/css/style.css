@@ -126,4 +126,3 @@ body{margin:0;font-family:'Poppins',sans-serif;color:#222;overflow-x:hidden}
 /* Responsive tweaks */
 @media (max-width: 991.98px){.hero-section{height:88vh}#mainNav .navbar-brand img{height:54px}.side-menu{width:85%}}
 @media (max-width: 575.98px){.hero-content h1{font-size:2.1rem}.hero-content p{font-size:1rem}#mainNav{padding:14px 0}}
-
