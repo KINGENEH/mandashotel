@@ -28,32 +28,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
- // ============ RIGHT-SLIDE MOBILE MENU + OVERLAY ============
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
-const overlay = document.getElementById("overlay");
+  // ============ RIGHT-SLIDE MOBILE MENU + OVERLAY ============
+  const menuToggle = document.getElementById("menuToggle");
+  const sideMenu = document.getElementById("sideMenu");
+  const overlay = document.getElementById("overlay");
 
-if (menuToggle && sideMenu && overlay) {
-  // Open / close menu
-  menuToggle.addEventListener("click", () => {
-    sideMenu.classList.toggle("active");
-    overlay.classList.toggle("active");
-  });
+  if (menuToggle && sideMenu && overlay) {
+    // Open / close menu
+    menuToggle.addEventListener("click", () => {
+      sideMenu.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
 
-  // Close menu if overlay is clicked
-  overlay.addEventListener("click", () => {
-    sideMenu.classList.remove("active");
-    overlay.classList.remove("active");
-  });
-
-  // Close menu when a link inside it is clicked
-  document.querySelectorAll(".side-menu .nav-link").forEach(link => {
-    link.addEventListener("click", () => {
+    // Close menu if overlay is clicked
+    overlay.addEventListener("click", () => {
       sideMenu.classList.remove("active");
       overlay.classList.remove("active");
     });
-  });
 
+    // Close menu when a link inside it is clicked
+    document.querySelectorAll(".side-menu .nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        sideMenu.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+    });
+  }
 
-}
+  console.log("main.js loaded successfully ✅");
+
+}); // ✅ <-- this was missing previously!
 
