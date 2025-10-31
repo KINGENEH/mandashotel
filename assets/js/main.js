@@ -88,3 +88,15 @@ window.addEventListener("load", onReveal);
 const toTop = document.getElementById("toTop");
 window.addEventListener("scroll", () => { if (toTop) toTop.style.display = window.scrollY > 400 ? "flex" : "none"; });
 if (toTop) toTop.addEventListener("click", () => window.scrollTo({ top:0, behavior:"smooth" }));
+
+// ====== PRELOADER HIDE ======
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500); // fade out in 0.5s
+  }
+});
+
