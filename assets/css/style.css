@@ -573,8 +573,8 @@ h1, h2, h3, h4, h5 {
 
 /* Default (on transparent navbar at top) */
 .navbar-toggler .bar {
-  background-color: #fff; /* white */
-}
+  background-color: #fff;
+  transition: background-color 0.6s ease; /* match navbar timing */
 
 /* When navbar has scrolled / white background */
 .navbar.scrolled .navbar-toggler .bar {
@@ -585,6 +585,7 @@ h1, h2, h3, h4, h5 {
 .navbar-toggler .bar {
   transition: background-color 0.4s ease;
 }
+
 
 
 
