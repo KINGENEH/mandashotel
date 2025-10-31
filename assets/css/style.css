@@ -565,7 +565,24 @@ h1, h2, h3, h4, h5 {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* ===============================
+   Dynamic Hamburger Color Change
+=============================== */
 
+/* Default (on transparent navbar at top) */
+.navbar-toggler .bar {
+  background-color: #fff; /* white */
+}
+
+/* When navbar has scrolled / white background */
+.navbar.scrolled .navbar-toggler .bar {
+  background-color: #000; /* black */
+}
+
+/* Optional: transition for smooth color fade */
+.navbar-toggler .bar {
+  transition: background-color 0.4s ease;
+}
 
 
 
