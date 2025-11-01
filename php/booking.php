@@ -52,7 +52,7 @@ try {
   $mail->Host       = 'mail.mandashotel.com';
   $mail->SMTPAuth   = true;
   $mail->Username   = 'reservations@mandashotel.com';
-  $mail->Password   = 'CHANGE_ME_SECURE_PASSWORD'; // set in cPanel
+  $mail->Password   = 'M.hotel_2025'; // set in cPanel
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
   $mail->Port       = 465;
 
