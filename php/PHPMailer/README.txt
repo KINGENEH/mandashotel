@@ -1,0 +1,1 @@
+Place PHPMailer.php, SMTP.php, Exception.php in this folder (download from https://github.com/PHPMailer/PHPMailer).

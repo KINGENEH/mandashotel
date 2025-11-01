@@ -1,0 +1,1 @@
+Upload to public_html, replace images in assets/img, set SMTP password in php/booking.php, and install PHPMailer locally (php/PHPMailer).

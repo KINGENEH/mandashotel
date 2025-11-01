@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thank You — Mandas Hotel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>.auto-note{color:#666;margin-top:8px;font-size:.9rem}</style>
+</head>
+<body>
+  <div class="thankyou-wrap">
+    <div class="thankyou-card">
+      <img src="assets/img/logo-dark.png" alt="Mandas Hotel">
+      <h2 id="ty-name">Thank you for your booking!</h2>
+      <p>Your request has been received. Our reservations team will contact you shortly.</p>
+      <p class="auto-note">You’ll be redirected to the homepage in a few seconds…</p>
+      <div style="margin-top:14px">
+        <a class="btn btn-gold" href="index.html">Back to Home</a>
+        <a class="btn btn-outline-dark" href="index.html#booking">View Booking Details</a>
+      </div>
+      <div style="margin-top:16px;color:#666;font-size:.95rem">
+        <div>reservations@mandashotel.com · +234 706 294 3507</div>
+        <div>Adjacent Romchi Fuel Station, Off Ugwuaji Monac Road, Enugu</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      try{
+        var n = sessionStorage.getItem("mandas_fullname")||"";
+        if(n){
+          var first = n.trim().split(" ")[0];
+          document.getElementById("ty-name").innerText = "Thank you, " + first + "!";
+        }
+      }catch(e){}
+      setTimeout(function(){ window.location.href = "index.html"; }, 6000);
+    })();
+  </script>
+</body>
+</html>
